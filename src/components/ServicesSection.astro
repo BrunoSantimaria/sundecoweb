@@ -1,0 +1,75 @@
+---
+import { Shield, Zap, Wrench } from 'lucide-react'
+const services = [
+  {
+    icon: Shield,
+    title: 'Instalaciones Seguras',
+    description: 'Instalación profesional garantizada',
+  },
+  {
+    icon: Zap,
+    title: 'Seguridad 100%',
+    description: 'Máxima protección para tu familia',
+  },
+  {
+    icon: Wrench,
+    title: 'Brindamos Rapidez',
+    description: 'Servicio ágil y eficiente',
+  },
+];
+---
+
+<section class="bg-gray-50 py-24">
+  <div class="container mx-auto px-4">
+    <div class="grid gap-8 md:grid-cols-3">
+      {services.map((service, index) => {
+        const Icon = service.icon;
+        return (
+          <div class={`card text-center`} key={index}>
+            <div class="pt-6">
+              <div class="mb-4 flex justify-center">
+                <Icon className="h-12 w-12 text-blue-600" />
+              </div>
+              <h3 class="mb-2 text-xl font-semibold">{service.title}</h3>
+              <p class="text-gray-600">{service.description}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // IntersectionObserver para animar las tarjetas al entrar en la vista
+  if (typeof window !== 'undefined') {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((card) => observer.observe(card));
+    });
+  }
+</script>
