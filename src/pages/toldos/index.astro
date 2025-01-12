@@ -1,0 +1,147 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+
+import SunsetDistributor from "../../components/SunsetDistributor.astro";
+
+const awningTypes = [
+  {
+    id: 'vertical',
+    name: 'Toldos Verticales',
+    description: 'Los Toldos Verticales Sunset ofrecen una solución elegante y funcional para proteger ventanas y balcones del sol y la lluvia. Su diseño moderno se adapta a cualquier fachada, proporcionando sombra y privacidad cuando se necesita.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/SunsetWeb.ToldoVertical_jvjuud'
+  },
+  {
+    id: 'proyeccion',
+    name: 'Toldos de Proyección',
+    description: 'Los Toldos de Proyección Sunset son ideales para terrazas y patios, ofreciendo una amplia área de sombra. Su diseño robusto y elegante permite disfrutar del aire libre protegido del sol y las inclemencias del tiempo.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Toldo-Proyectante-Sunset-Galeria_aiakfk'
+  },
+];
+
+const features = [
+  {
+    title: 'Juntas soldadas',
+    description: 'Fabricados mediante una innovadora técnica que ofrece un acabado totalmente liso y uniforme.',
+  },
+  {
+    title: 'Telas de alta calidad',
+    description: 'Colección de telas que incluye patrones lisos y rayados muy actuales, con alta resistencia a la intemperie.',
+  },
+  {
+    title: 'Accionamiento versátil',
+    description: 'Disponibles con accionamiento manual o motorizado para mayor comodidad.',
+  },
+  {
+    title: 'Diseño moderno',
+    description: 'Sistemas y mecanismos modernos y funcionales que se adaptan a cualquier estilo arquitectónico.',
+  },
+];
+const metadata = {
+  title: 'Toldos | Sundeco',
+  description: 'Protección y estilo para tus espacios exteriores en Rosario, Funes y Roldán. Encuentra toldos verticales y de proyección con diseños modernos y accionamiento versátil.', 
+  keywords: 'toldos verticales Rosario, toldos de proyección Funes, toldos modernos Roldán, toldos para balcones Rosario, toldos para terrazas Funes, toldos para techos Roldán, toldos verticales modernos Rosario, toldos de proyección elegantes Funes, toldos accionamiento versátil Roldán, toldos accionamiento manual Rosario, toldos accionamiento motorizado Funes, toldos accionamiento remoto Roldán, toldos accionamiento automático Rosario, toldos accionamiento eléctrico Funes, toldos accionamiento solar Roldán, toldos accionamiento manual Rosario, toldos accionamiento motorizado Funes, toldos accionamiento remoto Roldán, toldos accionamiento automático Rosario, toldos accionamiento eléctrico Funes, toldos accionamiento solar Roldán'
+}
+---
+
+<DefaultLayout {...metadata}>
+  <section class="relative h-[60vh] min-h-[400px] w-full overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Toldo-Proyectante-Sunset-6_usnfvl"
+        alt="Toldos proyectantes sundeco"
+        class="h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div class="relative z-10 flex h-full items-center justify-center text-center animate-fade-in-up">
+      <div class="container px-4">
+        <h1 class="mb-4 text-5xl font-bold tracking-tight text-white md:text-6xl">Toldos</h1>
+        <div class="mx-auto mb-6 h-1 w-24 bg-blue-600 animate-scale-in"></div>
+        <p class="text-lg text-gray-200 md:text-xl animate-fade-in-delay">Protección y estilo para tus espacios exteriores</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mx-auto px-4 py-16">
+    <div class="mb-16 text-center">
+      <h2 class="mb-6 text-3xl font-bold animate-fade-in-up">Nuestros Toldos</h2>
+      <p class="mx-auto max-w-3xl text-lg text-gray-600 animate-fade-in-up">
+        Los Toldos Sunset cuentan con los sistemas y mecanismos más modernos y funcionales. Se fabrican mediante una innovadora técnica de juntas soldadas, que ofrece un acabado totalmente liso y uniforme.
+      </p>
+    </div>
+
+    <div class="mb-24 space-y-24">
+      {awningTypes.map((awning, index) => (
+        <div
+          class={`flex flex-col gap-8 ${
+            index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+          } animate-fade-in-up`}
+        >
+          <div class="md:w-1/2">
+            <img
+              src={awning.image}
+              alt={awning.name}
+              class="rounded-lg object-cover shadow-lg hover:shadow-xl transition-transform hover:scale-105"
+            />
+          </div>
+          <div class="flex flex-col justify-center md:w-1/2">
+            <h2 class="mb-4 text-3xl font-semibold">{awning.name}</h2>
+            <p class="text-gray-600">{awning.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mb-16">
+      <h2 class="mb-8 text-center text-3xl font-bold animate-fade-in-up">Características</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {features.map((feature, index) => (
+          <div
+            class={`rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-all animate-fade-in-up`}
+            style={`animation-delay: ${index * 0.2}s`}
+          >
+            <h3 class="mb-2 text-xl font-semibold">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="rounded-xl bg-gray-50 p-8 shadow-md animate-fade-in-up">
+      <div class="flex items-center gap-3 mb-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="text-blue-600"
+        >
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+        </svg>
+        <h3 class="text-2xl font-semibold">Personalización</h3>
+      </div>
+      <p class="mb-6 text-gray-600">
+        En Sundeco, entendemos que cada espacio es único. Por eso, ofrecemos una amplia gama de opciones de personalización para nuestros toldos.
+      </p>
+      <p class="text-gray-600">
+        Nuestro equipo de expertos está listo para asesorarle en la elección del toldo ideal para su hogar o negocio.
+      </p>
+    </div>
+
+    <div class="mt-12 text-center animate-fade-in-up">
+      <a
+        href="#"
+        class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-transform hover:scale-105"
+      >
+        Solicitar Presupuesto
+      </a>
+      <SunsetDistributor />
+    </div>
+  </div>
+</DefaultLayout>

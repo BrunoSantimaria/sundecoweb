@@ -1,0 +1,18 @@
+---
+import ContactForm from "../../components/ContactForm.tsx";
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout title="Sundeco | Contacto" description="Contacto con Sunset Deco">
+  <div class="container mx-auto px-4 my-44 animate-fade-in-up">
+    <h1 class="text-3xl font-bold mb-6 hover:text-primary-600 transition-colors duration-300">
+      Contacto
+    </h1>
+    <p class="text-gray-600 mb-6 animate-fade-in-delay">
+      Si tienes alguna pregunta o necesitas asistencia, por favor completa el formulario a continuación.
+    </p>
+    <div class="transform hover:scale-[1.01] transition-transform duration-300">
+      <ContactForm />
+    </div>
+  </div>
+</DefaultLayout>

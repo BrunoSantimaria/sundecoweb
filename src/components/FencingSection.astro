@@ -1,0 +1,93 @@
+<section class="py-24">
+    <div class="container mx-auto px-4">
+      <div class="mb-12 text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Cercos para Piscinas</h2>
+        <p class="mt-4 text-lg text-gray-500">
+          Protección y elegancia para tu piscina
+        </p>
+        <hr class="border-t my-6 h-[2px] w-[90%] text-center bg-gray-400 m-auto">
+      </div>
+      <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <div class="flex flex-col items-center text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-12 w-12 text-blue-600">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h4 class="mt-4 text-lg font-semibold">Tejido Anti Desgarre</h4>
+          <p class="text-gray-500">Alta resistencia para máxima seguridad.</p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-12 w-12 text-blue-600">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <h4 class="mt-4 text-lg font-semibold">Postes de Aluminio</h4>
+          <p class="text-gray-500">Durabilidad y estética en cada instalación.</p>
+        </div>
+    
+        <div class="flex flex-col items-center text-center">
+         
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-12 w-12 text-blue-600">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01m6.938-4h-13.876C5.072 15.527 5 16.274 5 17c0 1.105.895 2 2 2h10c1.105 0 2-.895 2-2 0-.726-.072-1.473-.188-2z" />
+          </svg>
+          <h4 class="mt-4 text-lg font-semibold">Dobladillos Reforzados</h4>
+          <p class="text-gray-500">Garantía de calidad en cada detalle.</p>
+        </div>
+  
+      </div>
+      <hr class="border-t my-6 h-[2px] w-[90%] text-center bg-gray-400 m-auto">
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="relative overflow-hidden rounded-lg opacity-0 transition-transform duration-1000 ease-out" data-animate="true" data-animation="fade-in-up">
+          <img
+            src="https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/cerco-removible-blanco"
+            alt="Cerco para piscina blanco"
+            class="h-[400px] w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="mb-2 text-xl font-semibold">Cerco Removible blanco</h3>
+       
+          </div>
+        </div>
+  
+        <div class="relative overflow-hidden rounded-lg opacity-0 transition-transform duration-1000 ease-out" data-animate="true" data-animation="fade-in-up">
+          <img
+            src="https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/cerco-removible-negro"
+            alt="Cerco para piscina negro"
+            class="h-[400px] w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="mb-2 text-xl font-semibold">Cerco Removible negro</h3>
+   
+          </div>
+        </div>
+      </div>
+  
+      <div class="mt-12 text-center">
+        <a href="/cercos" class="inline-block bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg text-lg">
+          Ver Más Información
+        </a>
+      </div>
+  
+    
+    </div>
+  
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+  
+      document.querySelectorAll("[data-animate=true]").forEach((element) => {
+        element.style.transform = "translateY(20px)";
+        observer.observe(element);
+      });
+    </script>
+  </section>
+  

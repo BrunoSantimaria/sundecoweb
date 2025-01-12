@@ -1,0 +1,138 @@
+---
+
+import Hero from '../../components/Hero.astro';
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+
+
+
+const features = [
+  {
+    title: 'Tejido antidesgarre',
+    description: 'Al contrario de la mayoría de las cercos permanentes, nuestros cercos impiden que los niños puedan treparlos debido a la textura de su malla. Estas se conforman de hilos de nylon recubiertos en pvc, con una resistencia al desgarre de 32kg/cm2. Las mallas no modifican sus propiedades ni su color, ya que son resistentes al cloro y a la exposición de los rayos UV. La duración del tejido es de aproximadamente 10 años dependiendo su exposición y cuidado.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/IMG_9523_fqvlij'
+  },
+  {
+    title: 'Postes de aluminio',
+    description: 'Consideramos que es la parte más importante en el sistema de cercos removibles. Nuestros postes tienen un grosor superior a los utilizados por la competencia. Posee la resistencia y seguridad adecuada para que un niño, tanto colgándose o empujándolo, no pueda doblarlo ni quebrarlo. Su diseño, no posee elementos cortantes, y el acabado anodizado muestra una delicada terminación. Los tornillos no sobresalen se encuentran al ras del poste, para evitar cortes o raspones a los niños. No requieren ningún mantenimiento posterior, tampoco se oxidan, ni se corroen.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/9b6a69a0-1efb-46f7-a1ed-062dd84f9a33_jdag7x'
+  },
+  {
+    title: 'Dobladillos',
+    description: 'Debido a que los niños suelen colgarse del tejido, los dobladillos tanto el superior como el inferior otorgan resistencia y terminación al cerco. Es un componente fundamental para que perdure el tensado. Tienen más de 500 micrones y una resistencia de 78kg/cm2 al desgarre, lo que es ampliamente superior al peso de cualquier niño. Están reforzados con Cuadruple costura de nylon, (Material no degradable por el sol).',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Diseño_sin_título_12_eaixds'
+  }
+];
+
+const installationImages = [
+  'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/c614fef4-cd41-47c7-b2c8-adb0b9ac09eb_j4qdkp',
+  'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/obra-sundeco-3',
+  'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/5c124919-ecb3-43c2-89b8-9ec67af4409e_eskygh',
+  'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/b6fafdc8-2e9a-410f-a050-711a67ca451a_fo2stk'
+];
+
+const metadata = {
+  title: 'Cercos para Piscinas | Sundeco',
+  description: 'En Rosario y Santa Fe, instalamos cercos removibles para piscinas, garantizando máxima seguridad y durabilidad. Protege a tus seres queridos con nuestros cercos de calidad superior.',
+  keywords: 'cercos para piscinas Rosario, seguridad piscinas Rosario, cercos removibles Santa Fe, instalación de cercos Rosario, protección para piscinas Santa Fe, cercos para niños y mascotas Rosario, cercos de nylon y aluminio Rosario, cercos UV resistentes Santa Fe, instalación de cercos piscinas Rosario'
+};
+---
+
+<DefaultLayout {...metadata}>
+  <Hero
+    title="Cercos para Piscinas"
+    subtitle="Instalamos Seguridad"
+    image="https://6a10fddb7e.clvaw-cdnwnd.com/ca7f3d0e082a099f4783433207756472/200000252-2415724159/4e01a851-2dba-4f93-845e-088fb5763699.webp?ph=6a10fddb7e"
+  />
+
+  <div class="container mx-auto px-4 py-16">
+    <!-- Nuestras Soluciones -->
+    <div class="mb-16 text-center fade-in">
+      <h2 class="mb-6 text-3xl font-bold">Nuestras Soluciones</h2>
+      <p class="mx-auto max-w-3xl text-lg text-gray-600">
+        Los cercos removibles fueron creados hace más de 25 años para brindar una mayor protección a bebés, niños y mascotas.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+      {features.map((feature, index) => (
+        <div 
+          class="fade-in bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105"
+          style={`animation-delay: ${index * 200}ms;`}
+        >
+          <img
+            src={feature.image}
+            alt={feature.title}
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-4">{feature.title}</h3>
+            <p class="text-gray-600 text-sm">{feature.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Instalaciones -->
+    <div class="mb-16 fade-in">
+      <h2 class="mb-8 text-center text-3xl font-bold">Instalaciones</h2>
+      <p class="mb-12 text-center text-lg text-gray-600">
+        Nuestro equipo para la instalación es fundamental, trabajamos con herramientas específicas para realizar una perforación precisa, nivelada y sin riesgo de roturas.
+      </p>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {installationImages.map((image, index) => (
+          <div class="image-hover">
+            <img
+              src={image}
+              alt={`Instalación ${index + 1}`}
+              width="400"
+              height="300"
+              class="rounded-lg object-cover shadow-lg transition-shadow hover:shadow-xl"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Proceso de Instalación -->
+    <div class="fade-in rounded-lg bg-gray-50 p-8">
+      <h3 class="mb-4 text-2xl font-semibold">Proceso de Instalación</h3>
+      <p class="mb-6 text-gray-600">
+        La instalación puede realizarse sobre diferentes superficies. Es recomendable realizarla sobre la superficie perimetral rígida (Vereda atérmica - Cordón de Hormigón).
+      </p>
+      <p class="text-gray-600">
+        En casos donde haya un sector con césped se realiza el ajuste e instalación sobre estacas de aluminio.
+      </p>
+    </div>
+
+    <!-- Solicitar Presupuesto -->
+    <div class="mt-12 text-center fade-in">
+      <span class="inline-flex h-12 items-center justify-center rounded-md bg-blue-600 duration-500 px-6 text-lg font-medium text-white transition hover:bg-blue-700 cursor-pointer">
+        Solicitar Presupuesto
+      </Button>
+    </div>
+  </div>
+
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .image-hover img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-hover:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</DefaultLayout>

@@ -1,0 +1,114 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-white">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div class="footer-section opacity-0 transform translate-y-6 transition duration-500">
+        <img
+          src="https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Logo-Sundeco"
+          alt="Sundeco Logo"
+          class="mb-4 w-36"
+        />
+        <p class="text-sm text-gray-400">
+          Especialistas en cortinas, redes de protección y cercos para piscinas. Soluciones de calidad para tu seguridad y confort.
+        </p>
+      </div>
+      <div class="footer-section opacity-0 transform translate-y-6 transition duration-500">
+        <h3 class="mb-4 text-lg font-semibold">Productos</h3>
+        <ul class="space-y-2">
+          <li><a href="/cortinas" class="text-gray-400 hover:text-white">Cortinas</a></li>
+          <li><a href="/redes" class="text-gray-400 hover:text-white">Redes de Protección</a></li>
+          <li><a href="/cercos" class="text-gray-400 hover:text-white">Cercos para Piscinas</a></li>
+          <li><a href="/toldos" class="text-gray-400 hover:text-white">Toldos</a></li>
+        </ul>
+      </div>
+      <div class="footer-section opacity-0 transform translate-y-6 transition duration-500">
+        <h3 class="mb-4 text-lg font-semibold">Contacto</h3>
+        <ul class="space-y-2 text-gray-400">
+          <li>Rosario, Santa Fe CP 2000</li>
+          <li ><a href="tel:+543412126487">(341)2126487</a></li>
+          <li><a href="mailto:info@sundeco.com.ar">info@sundeco.com.ar</a></li>
+        </ul>
+      </div>
+      <div class="footer-section opacity-0 transform translate-y-6 transition duration-500">
+        <h3 class="mb-4 text-lg font-semibold">Síguenos</h3>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/people/Sundeco-rosario/100075861191497/" class="text-gray-400 hover:text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/sundecorosario" class="text-gray-400 hover:text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+      
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+      © {year} Sundeco. Todos los derechos reservados.
+    </div>
+  </div>
+
+  <style>
+    footer {
+      position: relative;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .footer-section {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .footer-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <script>
+    if (typeof window !== 'undefined') {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      const sections = document.querySelectorAll('.footer-section');
+      sections.forEach((section) => observer.observe(section));
+    }
+  </script>
+</footer>

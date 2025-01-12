@@ -1,0 +1,166 @@
+---
+
+
+import Hero from '../../components/Hero.astro';
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+import { AlertCircle, Shield } from 'lucide-react';
+
+
+const netTypes = [
+  {
+    id: 'transparente',
+    name: 'Red Transparente',
+    description: 'Monofilamento Romboidal 5x5 y 3x3cm. Su soporte es perpendicular y tiene una resistencia de 140kg. por m2.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/4e01a851-2dba-4f93-845e-088fb5763699_mi9g9c',
+  },
+  {
+    id: 'blanca-negra',
+    name: 'Red Blanca o Negra',
+    description: 'Multifilamento Romboidal 5x5cm. Su soporte es perpendicular y tiene una resistencia de 200kg. por m2.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/cerco-removible-negro',
+  },
+];
+
+const netImages = [
+  'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/red_saeb8n',
+  'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/P1120431_myl5mv',
+  'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/obra-sundeco-1',
+  'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/obra-sundeco-3',
+];
+const metadata = {
+  title: 'Redes de Protección | Sundeco',
+  description: 'Instalamos redes de protección de alta calidad para garantizar la seguridad de tus espacios en Rosario, Funes y Roldán. Ideal para escaleras, balcones, terrazas y techos, brindando seguridad invisible con estética y resistencia.',
+  keywords: 'redes de protección Rosario, redes de seguridad Funes, redes de protección Roldán, redes para balcones, redes para escaleras, redes para terrazas, redes para techos, seguridad en balcones Rosario, redes invisibles Funes, protección de niños Roldán, redes resistentes Rosario, redes estéticas Funes, instalación de redes Roldán'
+};
+---
+<DefaultLayout {...metadata}>
+
+
+<Hero 
+  title="Redes de Protección" 
+  subtitle="Seguridad invisible para tu tranquilidad" 
+  image="https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/obra-sundeco-3" 
+/>
+
+<div class="container mx-auto px-4 py-16">
+  <!-- Redes Section -->
+  <div class="mb-16 grid gap-8 md:grid-cols-2">
+    {netTypes.map((net, index) => (
+      <div
+        class="overflow-hidden rounded-lg bg-white shadow-lg fade-in"
+        style={`animation-delay: ${index * 200}ms;`}
+      >
+        <div class="image-hover">
+          <img 
+            src={net.image} 
+            alt={net.name} 
+            width="600" 
+            height="400" 
+            class="h-64 w-full object-cover"
+          />
+        </div>
+        <div class="p-6">
+          <h2 class="mb-4 text-2xl font-semibold">{net.name}</h2>
+          <p class="text-gray-600">{net.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Sistema de Instalación -->
+  <div class="mb-16 fade-in">
+    <h2 class="mb-8 text-center text-3xl font-bold">Sistema de Instalación</h2>
+    <div class="rounded-lg bg-white p-6 shadow-lg">
+      <h3 class="mb-4 text-xl font-semibold">SISTEMA PREMIUM</h3>
+      <p class="text-gray-600">
+        Realizamos la instalación con flejes poliamida, aportan mayor sujeción por metro lineal de rombo por rombo. Además mejora la estética y se adaptan a la forma de cualquier superficie.
+      </p>
+    </div>
+  </div>
+
+  <!-- Lugares -->
+  <div class="mb-16">
+    <h2 class="mb-6 text-center text-4xl font-bold text-gray-800">
+      ¿Dónde instalar nuestras Redes de Protección?
+    </h2>
+    <div class="flex flex-wrap justify-center gap-4 mt-8 mb-12">
+      {['ESCALERAS', 'BALCONES', 'TERRAZAS', 'TECHOS'].map((lugar) => (
+        <div class="bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300">
+          <span class="text-blue-600 font-medium">{lugar}</span>
+        </div>
+      ))}
+    </div>
+    
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 fade-in">
+      {netImages.map((image, index) => (
+        <div class="image-hover">
+          <img 
+            src={image} 
+            alt={`Red de protección ${index + 1}`} 
+            width="300" 
+            height="300" 
+            class="rounded-lg m-auto object-cover shadow-lg"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Importante -->
+  <div class="mb-16 fade-in rounded-lg bg-white p-8 shadow-lg">
+    <div class="flex items-center gap-4 mb-6">
+      <AlertCircle size={32} className="text-yellow-500" />
+      <h2 class="text-2xl font-semibold">¡IMPORTANTE!</h2>
+    </div>
+    <p class="text-gray-600 pl-12">
+      Todas las redes de protección del mercado constituyen a un suplemento a la seguridad existente en los espacios a cubrir, es decir, que complementan la protección de barandas de hierro, vidrio, cables tensores, rejas.
+    </p>
+  </div>
+
+  <!-- Seguridad -->
+  <div class="fade-in rounded-lg bg-white p-8 shadow-lg">
+    <div class="flex items-center gap-4 mb-6">
+      <Shield size={32} className="text-blue-600" />
+      <h2 class="text-2xl font-semibold">SEGURIDAD DE NUESTRAS REDES</h2>
+    </div>
+    <p class="text-gray-600 pl-12">
+      Nuestros trabajos son de rápida instalación, 100% seguras. Garantía de 1 año sobre nuestros productos y su instalación.
+    </p>
+  </div>
+
+  <!-- Button -->
+  <div class="mt-12 text-center fade-in">
+    <span   class="inline-flex h-12 items-center justify-center rounded-md bg-blue-600 duration-500 px-6 text-lg font-medium text-white transition hover:bg-blue-700 cursor-pointer">
+        <a  href={`https://wa.me/543412126487?text=Hola, quiero consultar por Redes de Protección. Gracias.`}
+        target="_blank"
+        rel="noopener noreferrer">
+      Solicitar Presupuesto
+    </a>
+    </Button>
+
+  </div>
+</div>
+</DefaultLayout>
+<style>
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .image-hover img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .image-hover:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+</style>

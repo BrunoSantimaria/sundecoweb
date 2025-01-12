@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+
+const logoSrc = "https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Logotipo_Sunset_invertido_hhbnt4";
+---
+
+<section class="py-24">
+  <div class="container mx-auto px-4">
+    <div
+      class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#ed3326] to-[#ed3326] animate-fade-in-up"
+    >
+      <div class="flex flex-col items-center justify-center gap-8 px-6 py-16 sm:py-20 relative">
+        <!-- Logo -->
+        <div class="relative h-48 w-120 sm:h-40 sm:w-[32rem] animate-scale-in">
+          <img 
+            src={logoSrc} 
+            alt="Sunset Logo" 
+            class="object-cover w-full h-full"
+          />
+        </div>
+
+        <!-- Heading -->
+        <div class="text-center animate-fade-in-delay">
+          <h2 class="text-lg font-medium text-white sm:text-xl md:text-2xl">
+            Somos distribuidores de cortinas y toldos 
+            <span class="font-bold"> SUNSET</span>
+          </h2>
+        </div>
+
+        <!-- Gradient highlights -->
+        <div class="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-[#ed3326]/20 blur-3xl"></div>
+        <div class="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-[#ed3326]/20 blur-3xl"></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,166 @@
+---
+
+
+import Hero from '../../components/Hero.astro';
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+import SunsetDistributor from '../../components/SunsetDistributor.astro';   
+const curtainTypes = [
+  {
+    id: 'enrollables',
+    name: 'Cortinas Enrollables',
+    description: 'El diseño net de las Cortinas Enrollables permite integrarlas a cualquier estilo de decoración. De gran calidad y excelentes terminaciones, están disponibles en una gran variedad de telas, texturas y colores. Las colecciones incluyen telas Screen con diferentes grados de apertura, Black out en terminaciones lisas o con tramas, y telas Decorativas con distintos niveles de transparencia u opacidad. El accionamiento puede ser manual o motorizado.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/SunsetWeb.EnrollableBlackOutBlanca.Dormitorio_tsqhqp'
+  },
+  {
+    id: 'roller-blackout',
+    name: 'Cortinas Roller Black Out',
+    description: 'Nuestros modelos te ofrecen soluciones para lograr oscurecimiento en tu dormitorio; generar intimidad o simplemente, decorar de la mejor forma tu espacio de descanso y relax. Tenemos modernas telas black out lisas o con texturas que te van a sorprender, telas screen y una gran variedad de telas decorativas.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Sunset.Enrollable_2__1_fnjnm0'
+  },
+  {
+    id: 'roller-screen',
+    name: 'Cortinas Roller Screen',
+    description: 'El diseño net de las Cortinas Enrollables permite integrarlas a cualquier estilo de decoración. De gran calidad y excelentes terminaciones, están disponibles en una gran variedad de telas, texturas y colores. Las colecciones incluyen telas Screen con diferentes grados de apertura, Black out en terminaciones lisas o con tramas, y telas Decorativas con distintos niveles de transparencia u opacidad. El accionamiento puede ser manual o motorizado.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/cortina-tela-screen_n0wqeb'
+  },
+  {
+    id: 'enrollables-duo',
+    name: 'Cortinas Enrollables Duo',
+    description: 'Las Cortinas Enrollables Duo son muy decorativas, modernas y funcionales. Su doble tela alterna franjas opacas y traslúcidas que se superponen y permiten regular el paso de la luz de acuerdo a su posición. Abiertas mantienen las visuales y cerradas ofrecen un alto grado de privacidad. Su accionamiento en muy simple y confortable; y puede ser manual o motorizado.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Sunset.Enrollable_duo.PlayroomGente_xecz8t'
+  },
+  {
+    id: 'horizontales-aluminio',
+    name: 'Cortinas Horizontales de Aluminio',
+    description: 'Son un clásico siempre vigente. Adecuadas para todo tipo de espacios, controlan de forma precisa el grado de luminosidad y privacidad deseados. Las Cortinas Horizontales de Aluminio Sunset son fabricadas con aluminio de alta calidad, ofreciendo gran resistencia a las deformaciones o a la pérdida de color. Están disponibles en láminas de 16 y 25mm, en una gran variedad de colores y texturas.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Sunset.Horizontales_de_aluminio._dzytiu'
+  },{
+    id: 'cortinas-nantucket',
+    name: 'Cortinas Nantucket',
+    description: 'La Cortina Nantucket es uno de los modelos más exclusivos de Sunset. Su innovador diseño está compuesto por láminas horizontales de tela suspendidas entre dos velos traslúcidos, que tamizan la luz generando ambientes muy elegantes y cálidos. De acuerdo a su posición, permiten mantener las visuales o generar privacidad total. El accionamiento puede ser manual o motorizado. ',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Sunset.Nantucket.Living3_ngnnba'
+  },
+  {
+    id: 'cortinas-horizontales-madera',
+    name: 'Cortinas Horizontales de Madera',
+    description: 'Nuestras Cortinas Horizontales de Madera combinan la belleza y calidez de la madera natural con un eficiente control de la luz y la privacidad. Están disponibles en cinco colores: tres tonos de madera natural, blanco y negro. Su nuevo diseño de base y cenefa coordina con el color de las láminas, ofreciendo una terminación moderna y sofisticada. Su accionamiento puede ser manual o motorizado.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Sunset._Horizontales_de_madera.Cocina_u0uans'
+
+  },
+  {
+    id: 'cortinas-verticales',
+    name: 'Cortinas Verticales',
+    description: 'Las Cortinas Verticales aportan una estética fresca y moderna a los espacios. Generan un efecto de transparencia cuando están abiertas y logran gran privacidad cuando están cerradas. Pueden recogerse completamente hacia uno de los lados; ocupando un espacio mínimo en el vano. La colección de telas ofrece diferentes texturas y colores; en distintos grados de transparencia u opacidad.',
+    image: 'https://6a10fddb7e.clvaw-cdnwnd.com/ca7f3d0e082a099f4783433207756472/200000285-3787637879/Sunset.Verticales.Living.Rojas.Gente_xsauwr',
+  },{
+    id: 'cortinas-celulares',
+    name: 'Cortinas Celulares',
+    description: 'Las Cortinas Celulares se distinguen por su tela con diseño de celdas, que ofrece una alta protección térmica y permite reducir el consumo energético. Es una cortina muy decorativa, versátil y funcional; y en telas black out es ideal para dormitorios. Está disponible en dos tamaños de celda, 10mm. y 20mm; en distintos niveles de transparencia u opacidad. El accionamiento puede ser manual o motorizado.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/C.Celulares.Sunset_pvc2je'
+  },
+  {
+    id: 'paneles-orientales',
+    name: 'Paneles Orientales',
+    description: 'Los Paneles Orientales permiten cubrir grandes ventanales, o incluso separar ambientes. Sus paneles de tela se desplazan de forma horizontal a través de un riel, permitiendo abrir la cortina hacia la derecha, la izquierda o hacia ambos lados. Su estilo minimalista se adapta a todo tipo de espacios y la colección de telas ofrece una gran variedad de texturas y colores.',
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/SunsetWeb.PanelOriental.Comedor_bmubff'
+  },
+];
+const metadata = {
+  title: 'Cortinas | Sundeco',
+  description: 'Encuentra cortinas elegantes y funcionales para transformar cada espacio de tu hogar u oficina en Rosario, Funes y Roldán. Amplia variedad de diseños y estilos, desde Roller hasta Paneles Orientales.',
+  keywords: 'cortinas Rosario, cortinas Funes, cortinas Roldán, cortinas elegantes, cortinas funcionales, cortinas roller blackout Rosario, cortinas roller screen Funes, cortinas enrollables duo Roldán, cortinas horizontales aluminio, cortinas nantucket Rosario, cortinas madera Funes, cortinas verticales modernas Roldán, cortinas celulares diseño, cortinas paneles orientales Rosario, cortinas personalizadas Funes Roldán'
+};
+---
+<DefaultLayout {...metadata}>
+<Hero
+  title="Cortinas"
+  subtitle="Elegancia y funcionalidad para cada espacio de tu hogar"
+  image="https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/SunsetWeb.EnrollableBlackOutBlanca.Dormitorio_tsqhqp"
+/>
+
+<div class="container mx-auto px-4 py-8">
+  <div class="flex flex-wrap justify-center gap-4">
+    {curtainTypes.map((curtain) => (
+      <button
+        onclick={`document.getElementById('${curtain.id}').scrollIntoView({behavior: 'smooth'})`}
+        class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-full transition-all hover:scale-105"
+      >
+        {curtain.name}
+      </button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up-container {
+    animation-delay: var(--delay, 0s);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+
+  .hover-button:hover {
+    transform: scale(1.05);
+  }
+</style>
+
+<div class="container mx-auto px-4 py-16">
+  <div class="space-y-24">
+    {curtainTypes.map((curtain, index) => (
+      <div
+        id={curtain.id}
+        key={curtain.id}
+        class={`flex flex-col gap-8 fade-in-up fade-in-up-container ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+        style={{ '--delay': `${index * 0.2}s` }}
+      >
+        <div class="md:w-1/2 hover-scale">
+          <img
+            src={curtain.image}
+            alt={curtain.name}
+        
+            class="rounded-lg m-auto h-[300px] md:h-[600px] w-[300px] md:w-[600px] object-cover shadow-lg transition-shadow hover:shadow-xl"
+          />
+        </div>
+        <div class="flex flex-col justify-center md:w-1/2">
+          <h2 class="mb-4 text-3xl font-semibold fade-in-up">
+            {curtain.name}
+          </h2>
+          <p class="mb-6 text-gray-600 fade-in-up">
+            {curtain.description}
+          </p>
+          <div class="fade-in-up">
+            <a 
+              href={`https://wa.me/543412126487?text=${encodeURIComponent(`Hola, quiero consultar por ${curtain.name}. Gracias.`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded hover-button transition-transform"
+            >
+              Solicitar Presupuesto
+            </a>
+         
+          </div>
+        </div>
+      </div>
+    ))}
+       <SunsetDistributor />
+  </div>
+</div>
+</DefaultLayout>

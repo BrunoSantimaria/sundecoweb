@@ -1,0 +1,74 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+---
+
+<DefaultLayout title="Página no encontrada" description="La página que buscas no existe">
+  <section class="flex mt-20 max-w-[90vw] m-auto min-h-[50vh] flex-col items-center justify-center ">
+    <div class="text-center">
+      <h1 
+        class="mb-4 text-6xl font-bold text-blue-600 animate-scale-in"
+      >
+        404
+      </h1>
+      <h2 
+        class="mb-4 text-3xl font-semibold text-gray-800 animate-fade-in"
+        style="--delay: 200ms;"
+      >
+        Página no encontrada
+      </h2>
+      <p 
+        class="mb-8 text-lg text-gray-600 animate-fade-in"
+        style="--delay: 400ms;"
+      >
+        Lo sentimos, la página que estás buscando no existe o ha sido movida.
+      </p>
+      <div 
+        class="animate-fade-in"
+        style="--delay: 600ms;"
+      >
+        <a href="/" class="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-transform hover:scale-105">
+        
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Animaciones */
+    .animate-fade-in {
+      opacity: 0;
+      animation: fade-in 0.5s ease forwards;
+    }
+    .animate-scale-in {
+      transform: scale(0.5);
+      opacity: 0;
+      animation: scale-in 0.5s ease forwards;
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scale-in {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Controlar retrasos */
+    [style*="--delay"] {
+      animation-delay: var(--delay);
+    }
+  </style>
+</DefaultLayout>

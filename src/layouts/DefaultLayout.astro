@@ -1,54 +1,93 @@
+---
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+}
+
+const { title, description, keywords } = Astro.props;
+const year = new Date().getFullYear();
+---
+
 <!doctype html>
 <html lang="en">
   <head>
+	<script>
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-5TZ94HCR');
+	  </script>
+	  <!-- End Google Tag Manager -->
+  
+	  <!-- Google Analytics -->
+	  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7RJTPTYC1P"></script>
+	  <script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-7RJTPTYC1P');
+	  </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-	<link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
-	<link rel="icon" href="/favicon.svg" type="image/x-icon">
-	
+    <link rel="shortcut icon" href="/favicon.svg" type="/x-icon">
+    <link rel="icon" href="/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles.css">
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link 
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" 
       rel="stylesheet"
     />
-    <title>Sundeco - Cortinas, Redes y Cercos</title>
+    <title>{title}</title>
   </head>
-  <body class="min-w-screen">
-    <slot />
+  <body class="min-h-screen flex flex-col">
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TZ94HCR"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	  </noscript>
+    <Navigation />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <ScrollToTop />
+    <WhatsAppButton />
   </body>
 </html>
 
 <style is:global>
-  /* Resetting margins and paddings */
+  /* General reset */
   html, body {
-
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif; /* Setting Inter as the default font */
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
   }
 
-  /* Navigation and footer fixed positions */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  /* Utility classes for fixed buttons */
-  .scroll-to-top, 
-  .whatsapp-button {
-    position: fixed;
-    z-index: 1000;
+    background-color: #1a202c;
+    color: white;
+  
+    text-align: left;
   }
 </style>
