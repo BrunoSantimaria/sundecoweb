@@ -8,44 +8,8 @@
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
         }
       ]
-    }
-  ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
-  "redirects": [
-    {
-      "source": "/cortinas",
-      "destination": "/cortinas/index.html",
-      "permanent": true
-    },
-    {
-      "source": "/redes",
-      "destination": "/redes/index.html",
-      "permanent": true
-    },
-    {
-      "source": "/toldos",
-      "destination": "/toldos/index.html",
-      "permanent": true
-    },
-    {
-      "source": "/cercos",
-      "destination": "/cercos/index.html",
-      "permanent": true
-    },
-    {
-      "source": "/contacto",
-      "destination": "/contacto/index.html",
-      "permanent": true
     }
   ]
 }
