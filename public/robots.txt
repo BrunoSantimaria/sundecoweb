@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+Allow: /contacto/
+Allow: /redes/
+Allow: /cortinas/
+Allow: /cercos/
+Allow: /toldos/
 
 # Sitemap
 Sitemap: https://sundeco.com.ar/sitemap-index.xml
