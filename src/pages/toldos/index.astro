@@ -8,13 +8,15 @@ const awningTypes = [
     id: 'vertical',
     name: 'Toldos Verticales',
     description: 'Los Toldos Verticales Sunset ofrecen una solución elegante y funcional para proteger ventanas y balcones del sol y la lluvia. Su diseño moderno se adapta a cualquier fachada, proporcionando sombra y privacidad cuando se necesita.',
-    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/SunsetWeb.ToldoVertical_jvjuud'
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/SunsetWeb.ToldoVertical_jvjuud',
+    alt: 'Toldo vertical sundeco rosario'
   },
   {
     id: 'proyeccion',
     name: 'Toldos de Proyección',
     description: 'Los Toldos de Proyección Sunset son ideales para terrazas y patios, ofreciendo una amplia área de sombra. Su diseño robusto y elegante permite disfrutar del aire libre protegido del sol y las inclemencias del tiempo.',
-    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Toldo-Proyectante-Sunset-Galeria_aiakfk'
+    image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/Toldo-Proyectante-Sunset-Galeria_aiakfk',
+    alt: 'Toldo de proyeccion sundeco rosario'
   },
 ];
 
@@ -81,7 +83,7 @@ const metadata = {
           <div class="md:w-1/2">
             <img
               src={awning.image}
-              alt={awning.name}
+              alt={awning.alt}
               class="rounded-lg object-cover shadow-lg hover:shadow-xl transition-transform hover:scale-105"
             />
           </div>

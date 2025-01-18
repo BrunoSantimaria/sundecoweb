@@ -12,12 +12,14 @@ const netTypes = [
     name: 'Red Transparente',
     description: 'Monofilamento Romboidal 5x5 y 3x3cm. Su soporte es perpendicular y tiene una resistencia de 140kg. por m2.',
     image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/4e01a851-2dba-4f93-845e-088fb5763699_mi9g9c',
+    alt: 'Red Transparente sundeco rosario',
   },
   {
     id: 'blanca-negra',
     name: 'Red Blanca o Negra',
     description: 'Multifilamento Romboidal 5x5cm. Su soporte es perpendicular y tiene una resistencia de 200kg. por m2.',
     image: 'https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto,w_800/Sundeco/cerco-removible-negro',
+    alt: 'Red Blanca o Negra sundeco rosario',
   },
 ];
 
@@ -54,7 +56,7 @@ const metadata = {
         <div class="image-hover">
           <img 
             src={net.image} 
-            alt={net.name} 
+            alt={net.alt} 
             width="600" 
             height="400" 
             class="h-64 w-full object-cover"
