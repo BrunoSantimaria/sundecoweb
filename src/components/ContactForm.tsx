@@ -16,6 +16,13 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    window.dataLayer.push({
+      event: "form_submission",
+      form_name: "contact_form",
+      form_id: "contact_main",
+    });
+
     try {
       await sendEmail(formData);
       setToastMessage("¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.");
