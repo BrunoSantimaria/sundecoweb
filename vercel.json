@@ -41,6 +41,11 @@
       "source": "/toldos",
       "destination": "/toldos/",
       "permanent": true
+    },
+    {
+      "source": "/valoranos",
+      "destination": "/valoranos/",
+      "permanent": true
     }
   ]
 }
