@@ -1,6 +1,6 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
+  "trailingSlash": true,
   "headers": [
     {
       "source": "/(.*)",
@@ -14,6 +14,33 @@
           "value": "index,follow"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/contacto",
+      "destination": "/contacto/",
+      "permanent": true
+    },
+    {
+      "source": "/redes",
+      "destination": "/redes/",
+      "permanent": true
+    },
+    {
+      "source": "/cortinas",
+      "destination": "/cortinas/",
+      "permanent": true
+    },
+    {
+      "source": "/cercos",
+      "destination": "/cercos/",
+      "permanent": true
+    },
+    {
+      "source": "/toldos",
+      "destination": "/toldos/",
+      "permanent": true
     }
   ]
 }

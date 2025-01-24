@@ -4,8 +4,17 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  integrations: [tailwind(), react(), sitemap()],
+  integrations: [
+    tailwind(),
+    react(),
+    sitemap({
+      changefreq: "weekly",
+      priority: 0.7,
+      lastmod: new Date(),
+    }),
+  ],
   site: "https://sundeco.com.ar",
+  trailingSlash: "always",
   vite: {
     ssr: {
       noExternal: ["pageable"],

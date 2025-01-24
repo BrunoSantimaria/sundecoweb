@@ -5,6 +5,8 @@ Allow: /redes/
 Allow: /cortinas/
 Allow: /cercos/
 Allow: /toldos/
+Disallow: /api/
+Disallow: /_astro/
 
 # Sitemap
 Sitemap: https://sundeco.com.ar/sitemap-index.xml
